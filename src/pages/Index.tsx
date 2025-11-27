@@ -16,6 +16,12 @@ const Index = () => {
     setIsVisible(true);
   }, []);
 
+  const trackDownload = (platform: string) => {
+    if (typeof window !== 'undefined' && (window as any).ym) {
+      (window as any).ym(101026698, 'reachGoal', `download_${platform}`);
+    }
+  };
+
   const features = [
     {
       icon: "Zap",
@@ -130,6 +136,7 @@ const Index = () => {
                   href="https://browser.yandex.ru/download?partner_id=831050&banerid=1313982495"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackDownload('desktop')}
                 >
                   <Button
                     size="lg"
@@ -143,6 +150,7 @@ const Index = () => {
                   href="https://redirect.appmetrica.yandex.com/serve/245744802526670871?clid=13982496&appmetrica_js_redirect=0"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackDownload('android')}
                 >
                   <Button
                     size="lg"
@@ -154,7 +162,16 @@ const Index = () => {
                 </a>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-8 mt-12">
+              <div className="flex flex-col items-center gap-8 mt-12">
+                <div className="bg-white p-4 rounded-2xl shadow-xl">
+                  <img
+                    src="https://cdn.poehali.dev/projects/ce35b6b2-4642-4c0e-ad88-6ec01c40cfa1/files/12980c9f-e00a-41a8-8f08-32a54c98f3bf.jpg"
+                    alt="QR код для скачивания Яндекс Браузера"
+                    className="w-32 h-32 md:w-40 md:h-40"
+                  />
+                  <p className="text-center text-black text-sm mt-2 font-semibold">Сканируй и скачивай</p>
+                </div>
+                <div className="flex flex-wrap justify-center gap-8">
                 {benefits.map((benefit, index) => (
                   <div
                     key={index}
@@ -169,6 +186,7 @@ const Index = () => {
                     </div>
                   </div>
                 ))}
+                </div>
               </div>
             </div>
           </div>
@@ -392,6 +410,7 @@ const Index = () => {
                 href="https://browser.yandex.ru/download?partner_id=831050&banerid=1313982495"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackDownload('desktop_cta')}
               >
                 <Button
                   size="lg"
@@ -405,6 +424,7 @@ const Index = () => {
                 href="https://redirect.appmetrica.yandex.com/serve/245744802526670871?clid=13982496&appmetrica_js_redirect=0"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackDownload('android_cta')}
               >
                 <Button
                   size="lg"
