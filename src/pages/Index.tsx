@@ -123,38 +123,39 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <div
         className={`transition-opacity duration-1000 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <section className="relative bg-gradient-to-br from-red-500 via-red-600 to-red-700 text-white py-20 px-4 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-red-500 via-red-600 to-red-700 text-white py-12 md:py-20 px-4 overflow-hidden">
           <div className="absolute inset-0 bg-black/10"></div>
           <div className="container mx-auto max-w-6xl relative z-10">
             <div className="text-center animate-fade-in">
-              <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6">
+              <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6">
                 Яндекс Браузер
               </h1>
-              <p className="text-xl md:text-2xl mb-4 font-semibold">
+              <p className="text-lg sm:text-xl md:text-2xl mb-3 md:mb-4 font-semibold px-4">
                 Быстрый и безопасный браузер от Яндекса
               </p>
-              <p className="text-lg md:text-xl mb-8 opacity-90">
+              <p className="text-base sm:text-lg md:text-xl mb-6 md:mb-8 opacity-90 px-4">
                 С голосовым помощником Алисой и защитой данных
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-8 md:mb-12 px-4">
                 <a
                   href="https://browser.yandex.ru/download?partner_id=831050&banerid=1313982495"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackDownload('desktop')}
+                  className="w-full sm:w-auto"
                 >
                   <Button
                     size="lg"
-                    className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-lg px-12 py-7 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+                    className="w-full sm:w-auto bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-base md:text-lg px-8 md:px-12 py-6 md:py-7 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
                   >
-                    <Icon name="Download" className="mr-2" size={24} />
+                    <Icon name="Download" className="mr-2" size={20} />
                     Скачать для компьютера
                   </Button>
                 </a>
@@ -163,37 +164,38 @@ const Index = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackDownload('android')}
+                  className="w-full sm:w-auto"
                 >
                   <Button
                     size="lg"
-                    className="bg-white hover:bg-gray-100 text-red-600 font-bold text-lg px-12 py-7 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+                    className="w-full sm:w-auto bg-white hover:bg-gray-100 text-red-600 font-bold text-base md:text-lg px-8 md:px-12 py-6 md:py-7 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
                   >
-                    <Icon name="Smartphone" className="mr-2" size={24} />
+                    <Icon name="Smartphone" className="mr-2" size={20} />
                     Скачать для Android
                   </Button>
                 </a>
               </div>
 
-              <div className="flex flex-col items-center gap-8 mt-12">
-                <div className="bg-white p-4 rounded-2xl shadow-xl">
+              <div className="flex flex-col items-center gap-6 md:gap-8 mt-8 md:mt-12">
+                <div className="bg-white p-3 md:p-4 rounded-2xl shadow-xl">
                   <img
                     src="https://cdn.poehali.dev/projects/ce35b6b2-4642-4c0e-ad88-6ec01c40cfa1/files/12980c9f-e00a-41a8-8f08-32a54c98f3bf.jpg"
                     alt="QR код для скачивания Яндекс Браузера"
-                    className="w-32 h-32 md:w-40 md:h-40"
+                    className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40"
                   />
-                  <p className="text-center text-black text-sm mt-2 font-semibold">Сканируй и скачивай</p>
+                  <p className="text-center text-black text-xs sm:text-sm mt-2 font-semibold">Сканируй и скачивай</p>
                 </div>
-                <div className="flex flex-wrap justify-center gap-8">
+                <div className="flex flex-wrap justify-center gap-6 md:gap-8 px-4">
                 {benefits.map((benefit, index) => (
                   <div
                     key={index}
                     className="text-center animate-scale-in"
                     style={{ animationDelay: `${index * 0.2}s` }}
                   >
-                    <div className="text-4xl md:text-5xl font-heading font-bold mb-2">
+                    <div className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold mb-2">
                       {benefit.number}
                     </div>
-                    <div className="text-sm md:text-base opacity-90">
+                    <div className="text-xs sm:text-sm md:text-base opacity-90">
                       {benefit.label}
                     </div>
                   </div>
@@ -204,29 +206,29 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-12 md:py-16 px-4 bg-gray-50">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 md:mb-12 text-gray-900 px-4">
               Преимущества браузера
             </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               {features.map((feature, index) => (
                 <Card
                   key={index}
                   className="hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-red-500"
                 >
-                  <CardContent className="p-6 text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-4">
+                  <CardContent className="p-5 md:p-6 text-center">
+                    <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-red-100 rounded-full mb-4">
                       <Icon
                         name={feature.icon}
                         className="text-red-600"
-                        size={32}
+                        size={28}
                       />
                     </div>
-                    <h3 className="font-heading text-xl font-bold mb-2">
+                    <h3 className="font-heading text-lg md:text-xl font-bold mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600">{feature.description}</p>
+                    <p className="text-sm md:text-base text-gray-600">{feature.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -234,52 +236,52 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-16 px-4 bg-white">
+        <section className="py-12 md:py-16 px-4 bg-white">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 md:mb-12 text-gray-900 px-4">
               Безопасность и защита данных
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
               {security.map((item, index) => (
                 <div
                   key={index}
-                  className="text-center p-8 rounded-xl bg-gradient-to-br from-gray-50 to-white border-2 border-gray-100 hover:border-red-300 transition-all"
+                  className="text-center p-6 md:p-8 rounded-xl bg-gradient-to-br from-gray-50 to-white border-2 border-gray-100 hover:border-red-300 transition-all"
                 >
-                  <div className="inline-flex items-center justify-center w-20 h-20 bg-red-500 rounded-full mb-6">
-                    <Icon name={item.icon} className="text-white" size={40} />
+                  <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-red-500 rounded-full mb-4 md:mb-6">
+                    <Icon name={item.icon} className="text-white" size={36} />
                   </div>
-                  <h3 className="font-heading text-2xl font-bold mb-3">
+                  <h3 className="font-heading text-xl md:text-2xl font-bold mb-2 md:mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-lg">{item.text}</p>
+                  <p className="text-base md:text-lg text-gray-600">{item.text}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-12 md:py-16 px-4 bg-gray-50">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-3 md:mb-4 text-gray-900 px-4">
               Возможности и функции
             </h2>
-            <p className="text-center text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
+            <p className="text-center text-gray-600 text-base md:text-lg mb-8 md:mb-12 max-w-2xl mx-auto px-4">
               Всё необходимое для комфортной работы в интернете
             </p>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
               <Card className="border-2 hover:border-yellow-400 transition-all">
-                <CardContent className="p-8">
+                <CardContent className="p-6 md:p-8">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
-                        <Icon name="MessageCircle" size={24} />
+                      <div className="w-10 h-10 md:w-12 md:h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
+                        <Icon name="MessageCircle" size={20} />
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-heading text-xl font-bold mb-2">
+                      <h3 className="font-heading text-lg md:text-xl font-bold mb-2">
                         Голосовой помощник Алиса
                       </h3>
-                      <p className="text-gray-600">
+                      <p className="text-sm md:text-base text-gray-600">
                         Отвечает на вопросы, управляет браузером голосом и
                         помогает найти нужную информацию
                       </p>
@@ -289,18 +291,18 @@ const Index = () => {
               </Card>
 
               <Card className="border-2 hover:border-yellow-400 transition-all">
-                <CardContent className="p-8">
+                <CardContent className="p-6 md:p-8">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
-                        <Icon name="Blocks" size={24} />
+                      <div className="w-10 h-10 md:w-12 md:h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
+                        <Icon name="Blocks" size={20} />
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-heading text-xl font-bold mb-2">
+                      <h3 className="font-heading text-lg md:text-xl font-bold mb-2">
                         Режим Турбо
                       </h3>
-                      <p className="text-gray-600">
+                      <p className="text-sm md:text-base text-gray-600">
                         Ускоряет загрузку страниц при медленном интернете и
                         экономит трафик
                       </p>
@@ -310,18 +312,18 @@ const Index = () => {
               </Card>
 
               <Card className="border-2 hover:border-yellow-400 transition-all">
-                <CardContent className="p-8">
+                <CardContent className="p-6 md:p-8">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
-                        <Icon name="Bookmark" size={24} />
+                      <div className="w-10 h-10 md:w-12 md:h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
+                        <Icon name="Bookmark" size={20} />
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-heading text-xl font-bold mb-2">
+                      <h3 className="font-heading text-lg md:text-xl font-bold mb-2">
                         Умная строка поиска
                       </h3>
-                      <p className="text-gray-600">
+                      <p className="text-sm md:text-base text-gray-600">
                         Подсказки при вводе, быстрый доступ к закладкам и
                         истории просмотров
                       </p>
@@ -331,18 +333,18 @@ const Index = () => {
               </Card>
 
               <Card className="border-2 hover:border-yellow-400 transition-all">
-                <CardContent className="p-8">
+                <CardContent className="p-6 md:p-8">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
-                        <Icon name="Languages" size={24} />
+                      <div className="w-10 h-10 md:w-12 md:h-12 bg-yellow-400 rounded-lg flex items-center justify-center">
+                        <Icon name="Languages" size={20} />
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-heading text-xl font-bold mb-2">
+                      <h3 className="font-heading text-lg md:text-xl font-bold mb-2">
                         Встроенный переводчик
                       </h3>
-                      <p className="text-gray-600">
+                      <p className="text-sm md:text-base text-gray-600">
                         Мгновенный перевод страниц и выделенного текста на 95
                         языков
                       </p>
@@ -354,30 +356,30 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-16 px-4 bg-white">
+        <section className="py-12 md:py-16 px-4 bg-white">
           <div className="container mx-auto max-w-6xl">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 md:mb-12 text-gray-900 px-4">
               Отзывы пользователей
             </h2>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-5 md:gap-6">
               {reviews.map((review, index) => (
                 <Card
                   key={index}
                   className="border-2 hover:shadow-xl transition-all"
                 >
-                  <CardContent className="p-6">
-                    <div className="flex mb-4">
+                  <CardContent className="p-5 md:p-6">
+                    <div className="flex mb-3 md:mb-4">
                       {[...Array(review.rating)].map((_, i) => (
                         <Icon
                           key={i}
                           name="Star"
                           className="text-yellow-400 fill-yellow-400"
-                          size={20}
+                          size={18}
                         />
                       ))}
                     </div>
-                    <p className="text-gray-700 mb-4 italic">"{review.text}"</p>
-                    <p className="font-semibold text-gray-900">{review.name}</p>
+                    <p className="text-sm md:text-base text-gray-700 mb-3 md:mb-4 italic">"{review.text}"</p>
+                    <p className="text-sm md:text-base font-semibold text-gray-900">{review.name}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -385,50 +387,53 @@ const Index = () => {
           </div>
         </section>
 
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-12 md:py-16 px-4 bg-gray-50">
           <div className="container mx-auto max-w-4xl">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-center mb-12 text-gray-900">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 md:mb-12 text-gray-900 px-4">
               Вопросы и ответы
             </h2>
-            <Accordion type="single" collapsible className="space-y-4">
-              {faq.map((item, index) => (
-                <AccordionItem
-                  key={index}
-                  value={`item-${index}`}
-                  className="bg-white border-2 rounded-lg px-6 hover:border-red-300 transition-all"
-                >
-                  <AccordionTrigger className="font-heading text-lg font-semibold hover:no-underline">
-                    {item.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 text-base">
-                    {item.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+            <div className="space-y-4">
+              <Accordion type="single" collapsible className="space-y-4">
+                {faq.map((item, index) => (
+                  <AccordionItem
+                    key={index}
+                    value={`item-${index}`}
+                    className="bg-white border-2 rounded-lg px-4 md:px-6 hover:border-red-300 transition-all"
+                  >
+                    <AccordionTrigger className="font-heading text-base md:text-lg font-semibold hover:no-underline text-left py-4">
+                      {item.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm md:text-base text-gray-600">
+                      {item.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </div>
         </section>
 
-        <section className="py-20 px-4 bg-gradient-to-br from-red-500 to-red-700 text-white">
+        <section className="py-16 md:py-20 px-4 bg-gradient-to-br from-red-500 to-red-700 text-white">
           <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6 px-4">
               Готовы начать?
             </h2>
-            <p className="text-xl mb-10 opacity-90">
+            <p className="text-lg md:text-xl mb-8 md:mb-10 opacity-90 px-4">
               Присоединяйтесь к 300 миллионам пользователей Яндекс Браузера
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center px-4">
               <a
                 href="https://browser.yandex.ru/download?partner_id=831050&banerid=1313982495"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackDownload('desktop_cta')}
+                className="w-full sm:w-auto"
               >
                 <Button
                   size="lg"
-                  className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-lg px-12 py-7 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+                  className="w-full sm:w-auto bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-base md:text-lg px-8 md:px-12 py-6 md:py-7 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
-                  <Icon name="Download" className="mr-2" size={24} />
+                  <Icon name="Download" className="mr-2" size={20} />
                   Скачать для компьютера
                 </Button>
               </a>
@@ -437,12 +442,13 @@ const Index = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackDownload('android_cta')}
+                className="w-full sm:w-auto"
               >
                 <Button
                   size="lg"
-                  className="bg-white hover:bg-gray-100 text-red-600 font-bold text-lg px-12 py-7 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+                  className="w-full sm:w-auto bg-white hover:bg-gray-100 text-red-600 font-bold text-base md:text-lg px-8 md:px-12 py-6 md:py-7 rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
-                  <Icon name="Smartphone" className="mr-2" size={24} />
+                  <Icon name="Smartphone" className="mr-2" size={20} />
                   Скачать для Android
                 </Button>
               </a>
@@ -450,16 +456,16 @@ const Index = () => {
           </div>
         </section>
 
-        <footer className="bg-gray-900 text-white py-8 px-4">
+        <footer className="bg-gray-900 text-white py-6 md:py-8 px-4">
           <div className="container mx-auto max-w-6xl text-center">
-            <p className="text-gray-400">
+            <p className="text-sm md:text-base text-gray-400 px-4">
               © 2024 Яндекс. Все права защищены. Официальный партнёр Яндекса.
             </p>
           </div>
         </footer>
 
         <div
-          className={`fixed bottom-6 right-6 z-50 transition-all duration-500 transform ${
+          className={`fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 transition-all duration-500 transform ${
             showFloatingButton
               ? "translate-y-0 opacity-100 scale-100"
               : "translate-y-20 opacity-0 scale-95 pointer-events-none"
@@ -473,10 +479,11 @@ const Index = () => {
           >
             <Button
               size="lg"
-              className="bg-red-600 hover:bg-red-700 text-white font-bold text-base px-8 py-6 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300 flex items-center gap-2"
+              className="bg-red-600 hover:bg-red-700 text-white font-bold text-sm md:text-base px-6 md:px-8 py-5 md:py-6 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300 flex items-center gap-2"
             >
-              <Icon name="Download" size={20} />
-              Скачать браузер
+              <Icon name="Download" size={18} />
+              <span className="hidden sm:inline">Скачать браузер</span>
+              <span className="sm:hidden">Скачать</span>
             </Button>
           </a>
         </div>
