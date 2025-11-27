@@ -149,7 +149,7 @@ const Index = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackDownload('desktop')}
-                  className="w-full sm:w-auto"
+                  className="hidden sm:block w-full sm:w-auto"
                 >
                   <Button
                     size="lg"
@@ -177,14 +177,19 @@ const Index = () => {
               </div>
 
               <div className="flex flex-col items-center gap-6 md:gap-8 mt-8 md:mt-12">
-                <div className="bg-white p-3 md:p-4 rounded-2xl shadow-xl">
+                <a 
+                  href="https://yandex.ru/project/browser/bonus/multioffer/affiliate?source=yQjEd371UYSSK54848&partner_string=P89XvN11U6RuE47077&cliddbro=14041107&clidmbro=14041100&cliddefault=14041116"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white p-3 md:p-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all transform hover:scale-105"
+                >
                   <img
-                    src="https://cdn.poehali.dev/projects/ce35b6b2-4642-4c0e-ad88-6ec01c40cfa1/files/12980c9f-e00a-41a8-8f08-32a54c98f3bf.jpg"
+                    src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://yandex.ru/project/browser/bonus/multioffer/affiliate?source=yQjEd371UYSSK54848%26partner_string=P89XvN11U6RuE47077%26cliddbro=14041107%26clidmbro=14041100%26cliddefault=14041116"
                     alt="QR код для скачивания Яндекс Браузера"
                     className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40"
                   />
                   <p className="text-center text-black text-xs sm:text-sm mt-2 font-semibold">Сканируй и скачивай</p>
-                </div>
+                </a>
                 <div className="flex flex-wrap justify-center gap-6 md:gap-8 px-4">
                 {benefits.map((benefit, index) => (
                   <div
