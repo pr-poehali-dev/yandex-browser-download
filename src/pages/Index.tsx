@@ -11,9 +11,21 @@ import { useState, useEffect } from "react";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [showFloatingButton, setShowFloatingButton] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
+
+    const handleScroll = () => {
+      if (window.scrollY > 600) {
+        setShowFloatingButton(true);
+      } else {
+        setShowFloatingButton(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const trackDownload = (platform: string) => {
@@ -445,6 +457,29 @@ const Index = () => {
             </p>
           </div>
         </footer>
+
+        <div
+          className={`fixed bottom-6 right-6 z-50 transition-all duration-500 transform ${
+            showFloatingButton
+              ? "translate-y-0 opacity-100 scale-100"
+              : "translate-y-20 opacity-0 scale-95 pointer-events-none"
+          }`}
+        >
+          <a
+            href="https://browser.yandex.ru/download?partner_id=831050&banerid=1313982495"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => trackDownload('floating_desktop')}
+          >
+            <Button
+              size="lg"
+              className="bg-red-600 hover:bg-red-700 text-white font-bold text-base px-8 py-6 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300 flex items-center gap-2"
+            >
+              <Icon name="Download" size={20} />
+              Скачать браузер
+            </Button>
+          </a>
+        </div>
       </div>
     </div>
   );
